@@ -1,23 +1,10 @@
 from models import Notepad
 from datetime import datetime
 
-# # c.execute("""CREATE TABLE users (name text, work text, notes text)""")
-# class User_model:
-#     __tablename__ = "users"
-#     first_name = Column(String, nullable=False)
-#     job = Column(String, nullable=False)
-#     notes = Column(String, nullable=True)
-#     created_at = Column(TIMESTAMP(timezone=True),
-#                         nullable=False, server_default=text('now()'))
-# class User_post:
-#     def __init__(self, name, job, notes):
-#         self.name = name
-#         self.job = job
-#         self.notes = notes
 today = datetime.today().strftime('%Y-%m-%d')
 
 db = Notepad()
-db.create_table()
+# db.create_table()
 
 
 def show_menu():
@@ -30,60 +17,6 @@ def show_menu():
     print("|               Delete post? press .4                     |")
     print("|               Exit, press .5                            |")
     print("===========================================================")
-
-# Add a new record to the table
-
-
-# def add_one(name, job, notes):
-#     conn = sqlite3.connect('database.db')
-#     c = conn.cursor()
-# #     c.execute("""CREATE TABLE users (
-# #      first_name text,
-# #      job text,
-# #      notes text
-# #  )""")
-#     new_data = User_model(name, job, notes)
-#     user = user_post(name, job, notes)
-#     c.execute("INSERT INTO users VALUES (?,?,?)", (new_data))
-#     conn.commit()
-#     conn.close()
-
-
-# c.execute("SELECT name FROM sqlite_master WHERE type='table';")
-# print(c.fetchall())
-# conn.commit()
-# conn.close()
-
-
-# def show_all():
-
-#     conn = sqlite3.connect('database.db')
-#     c = conn.cursor()
-#     c.execute("SELECT rowid, * FROM users")
-#     items = c.fetchall()
-
-#     for item in items:
-#         print(item)
-#     conn.commit()
-#     conn.close()
-
-
-# def delete_one(id):
-#     conn = sqlite3.connect('database.db')
-#     c = conn.cursor()
-#     c.execute("DELETE FROM users WHERE rowid = (?)", id)
-#     conn.commit()
-#     conn.close()
-
-
-# def edit_post(column, changed_data, id):
-#     conn = sqlite3.connect('database.db')
-#     c = conn.cursor()
-#     c.execute(f"""UPDATE users SET '{column}' = '{changed_data}'
-#         WHERE rowid = {id}
-#         """)
-#     conn.commit()
-#     conn.close()
 
 
 while True:
